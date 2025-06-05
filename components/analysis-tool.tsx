@@ -10,24 +10,24 @@ const analysisData = [
 
 export default function AnalysisTool() {
   return (
-    <section className="py-20 bg-gradient-to-r from-gray-900 via-blue-900/20 to-gray-900">
+    <section className="py-20 bg-gradient-to-r from-gray-900 via-blue-900/20 to-gray-900 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <BarChart3 className="text-neon-purple animate-pulse" size={32} />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Vores Analyseværktøj</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">Vores Analyseværktøj</h2>
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">Sådan scorer vi Danmarks bedste bettingsider</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Analysis Bars */}
             <div className="space-y-6">
               {analysisData.map((item, index) => (
                 <div key={index} className="group">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-white font-semibold">{item.category}</span>
+                    <span className="text-white font-semibold text-sm md:text-base">{item.category}</span>
                     <span className="text-neon-blue font-bold">{item.score}%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
@@ -41,22 +41,22 @@ export default function AnalysisTool() {
             </div>
 
             {/* Pie Chart Representation */}
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto relative">
+            <div className="relative flex justify-center">
+              <div className="w-64 h-64 md:w-80 md:h-80 relative">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple opacity-20 animate-spin-slow"></div>
                 <div className="absolute inset-4 rounded-full bg-gray-900 flex items-center justify-center">
                   <div className="text-center">
-                    <PieChart className="text-neon-blue mx-auto mb-2" size={48} />
-                    <div className="text-3xl font-bold text-white">4.8</div>
-                    <div className="text-neon-green">Gennemsnit</div>
+                    <PieChart className="text-neon-blue mx-auto mb-2" size={32} />
+                    <div className="text-2xl md:text-3xl font-bold text-white">4.8</div>
+                    <div className="text-neon-green text-sm md:text-base">Gennemsnit</div>
                   </div>
                 </div>
               </div>
 
-              <div className="text-center mt-8">
+              <div className="absolute -bottom-8 text-center w-full">
                 <div className="flex items-center justify-center space-x-2 text-neon-green">
                   <TrendingUp size={20} />
-                  <span className="font-semibold">Konstant forbedring</span>
+                  <span className="font-semibold text-sm md:text-base">Konstant forbedring</span>
                 </div>
               </div>
             </div>

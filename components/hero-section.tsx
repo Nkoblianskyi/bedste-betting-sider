@@ -21,18 +21,21 @@ export default function HeroSection() {
 
   return (
     <section className="hero relative pt-20 md:pt-32 pb-12 md:pb-20 overflow-hidden">
-      {/* Background glow effects */}
+      {/* Background glow effects - reduced sizes for mobile */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-green/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-neon-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-neon-purple/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-neon-green/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/4 w-40 h-40 md:w-80 md:h-80 bg-neon-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-36 h-36 md:w-72 md:h-72 bg-neon-purple/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-4 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-6 text-white">
-            Top Bettingsider i Danmark
-          </h1>
+          <div className="flex flex-col items-center justify-center space-x-3 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-6 text-white">
+              Top Bettingsider i Danmark
+            </h1>
+            <Image src={"/denmark.png"} alt="Top Bettingsider i Danmark" width={50} height={50} />
+          </div>
           <div className="text-lg md:text-xl lg:text-2xl text-neon-green font-bold mb-2 md:mb-4">
             Opdateret {getCurrentMonth()} {getCurrentYear()}
           </div>
@@ -56,7 +59,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="top3-grid grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="top3-grid grid lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
           {topThreeSites.map((site, index) => (
             <div key={site.id} className="transform hover:scale-105 transition-transform duration-300">
               <BettingSiteCard site={site} rank={index + 1} featured={true} />
@@ -80,22 +83,22 @@ export default function HeroSection() {
       </div>
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <div className="p-3 sm:p-6 bg-gradient-to-br from-gray-900 to-black rounded-2xl">
+        <div className="p-2 sm:p-6 bg-gradient-to-br from-gray-900 to-black rounded-2xl">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-center pr-6">
             Top Betting Sider
           </h2>
           <div className="space-y-3 sm:space-y-4">
             {topThreeSites.map((site, index) => (
               <a key={site.id} href={site.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="flex items-center space-x-3 p-3 sm:p-4 neon-border bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all duration-300">
+                <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-4 neon-border bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all duration-300">
                   <div className="rank-badge relative text-sm sm:text-base w-8 h-8 sm:w-10 sm:h-10">{index + 1}</div>
                   <div className="flex-shrink-0">
                     <Image
                       src={site.logo || "/placeholder.svg"}
                       alt={`${site.name} logo`}
-                      width={60}
-                      height={30}
-                      className="object-contain sm:w-[80px] sm:h-[40px]"
+                      width={80}
+                      height={40}
+                      className="object-contain sm:w-[100px] sm:h-[50px]"
                     />
                   </div>
                   <div className="flex-1 min-w-0">

@@ -59,22 +59,22 @@ export default function UserReviews() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-20 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <User className="text-neon-green animate-pulse" size={32} />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Brugernes Favoritter</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">Brugernes Favoritter</h2>
           </div>
           <p className="text-gray-300 text-lg">Hvad siger vores brugere?</p>
         </div>
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700 shadow-2xl">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-4 md:p-8 lg:p-12 border border-gray-700 shadow-2xl">
             <div className="text-center mb-8">
-              <div className="text-6xl font-bold text-neon-green mb-2">4.9</div>
+              <div className="text-4xl md:text-6xl font-bold text-neon-green mb-2">4.9</div>
               <div className="flex justify-center mb-2">{renderStars(5)}</div>
-              <div className="text-gray-400">ud af 5 baseret på 2,847 anmeldelser</div>
+              <div className="text-gray-400 text-sm md:text-base">ud af 5 baseret på 2,847 anmeldelser</div>
             </div>
 
             <div className="relative overflow-hidden">
@@ -83,11 +83,13 @@ export default function UserReviews() {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {reviews.map((review, index) => (
-                  <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div key={index} className="w-full flex-shrink-0 px-2 md:px-4">
                     <div className="text-center">
                       <div className="flex justify-center mb-4">{renderStars(review.rating)}</div>
-                      <blockquote className="text-xl text-gray-300 mb-6 italic">"{review.comment}"</blockquote>
-                      <div className="text-neon-blue font-semibold text-lg">{review.name}</div>
+                      <blockquote className="text-lg md:text-xl text-gray-300 mb-6 italic px-4">
+                        "{review.comment}"
+                      </blockquote>
+                      <div className="text-neon-blue font-semibold text-base md:text-lg">{review.name}</div>
                       <div className="text-gray-500 text-sm">
                         {review.site} • {review.date}
                       </div>

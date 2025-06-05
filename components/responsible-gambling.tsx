@@ -11,7 +11,7 @@ export default function ResponsibleGambling() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://stopspillet.dk"
+                href="https://www.stopspillet.dk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-red-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"

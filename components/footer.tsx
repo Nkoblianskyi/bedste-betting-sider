@@ -9,7 +9,7 @@ const organizations = [
   },
   {
     name: "StopSpillet",
-    url: "https://stopspillet.dk",
+    url: "https://www.stopspillet.dk/",
     logo: "/stopSpillet.png",
   },
   {
@@ -24,7 +24,7 @@ const organizations = [
   },
   {
     name: "GameCare",
-    url: "https://gamecare.org.uk",
+    url: "https://www.gamcare.org.uk/",
     logo: "/gamecare.svg",
   },
 ]

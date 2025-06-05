@@ -151,7 +151,7 @@ export default function HeroSection() {
             <div className="border-t border-gray-600 pt-3 sm:pt-4">
               <p className="text-xs sm:text-sm text-gray-400 mb-2">For hjælp med spilleproblemer, kontakt:</p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-                <a href="https://stopspillet.dk" className="text-neon-blue hover:underline text-sm">
+                <a href="https://www.stopspillet.dk/" className="text-neon-blue hover:underline text-sm">
                   StopSpillet.dk
                 </a>
                 <a href="https://rofus.nu" className="text-neon-blue hover:underline text-sm">

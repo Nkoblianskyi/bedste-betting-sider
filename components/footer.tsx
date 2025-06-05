@@ -10,7 +10,7 @@ const organizations = [
   {
     name: "StopSpillet",
     url: "https://www.stopspillet.dk/",
-    logo: "/stopSpillet.png",
+    logo: "/stopspillet.png",
   },
   {
     name: "ROFUS",

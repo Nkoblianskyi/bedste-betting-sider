@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2f 100%);
+    color: #ffffff;
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  p {
+    color: #e5e5e5;
+  }
+
+  .text-gray-300 {
+    color: #d1d5db !important;
+  }
+
+  .text-gray-400 {
+    color: #9ca3af !important;
+  }
+
+  .text-gray-500 {
+    color: #6b7280 !important;
+  }
+}
+
+@layer components {
+  .glow-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold;
+    color: #ffffff;
+    background: linear-gradient(45deg, #00ff41, #00d4ff, #bf00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+    animation: glow-pulse 3s ease-in-out infinite alternate;
+  }
+
+  .glow-btn {
+    @apply px-4 py-2 md:px-6 md:py-3 rounded-full border-2 font-semibold transition-all duration-300 text-sm md:text-base;
+    border-color: #00ff41;
+    color: #00ff41;
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  }
+
+  .glow-btn:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+    transform: translateY(-2px);
+  }
+
+  .neon-border {
+    @apply border-2 rounded-xl transition-all duration-300;
+    border-color: rgba(0, 212, 255, 0.3);
+    background: linear-gradient(135deg, rgba(26, 26, 47, 0.9), rgba(10, 10, 15, 0.95));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .neon-border:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+
+  .btn-glow {
+    @apply px-6 py-3 rounded-lg font-bold transition-all duration-300;
+    background: linear-gradient(45deg, #00ff41, #00d4ff);
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 255, 65, 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 6px 20px rgba(0, 255, 65, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .bonus-glow {
+    @apply px-4 py-2 rounded-lg text-sm font-bold;
+    background: linear-gradient(45deg, #bf00ff, #ff0080);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(191, 0, 255, 0.4);
+  }
+
+  .rank-badge {
+    @apply absolute -top-3 -left-3 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg;
+    background: linear-gradient(45deg, #00ff41, #00d4ff);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 50px rgba(0, 255, 65, 0.8), 0 0 70px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
